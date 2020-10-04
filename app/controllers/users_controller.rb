@@ -17,13 +17,18 @@ class UsersController < ApplicationController
     end 
 
     def show 
-        binding.pry
+        @user = User.find(params[:id])
+    end 
+
+    def destroy
+        session.clear
+        redirect_to root_path
     end 
 
 
 
     private 
     def user_params
-        params.require(:user).permit(:username)
+        params.require(:user).permit(:username, :password)
     end 
 end
