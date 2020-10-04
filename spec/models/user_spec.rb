@@ -10,4 +10,9 @@ RSpec.describe User, :type => :model do
         user = User.new(password_digest: nil)
         expect(user).to_not be_valid
     end 
+
+    describe 'associations' do 
+        it { should have_many(:exercises)}
+        it { should have_many(:patients)}
+    end 
 end 
