@@ -1,0 +1,7 @@
+<h2> These are your patients. </h2>
+<% @patients.map do |patient|  %>
+   <h3>Patient Name:</h3>
+   <%= patient.name %></br>
+   <h4>diagnosis:</h4>
+   <%= patient.diagnosis %>
+<% end %>
