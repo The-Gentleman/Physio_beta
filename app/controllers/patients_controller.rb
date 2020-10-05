@@ -5,7 +5,11 @@ class PatientsController < ApplicationController
 
     def create 
         @patient = Patient.create(patient_params)
-        redirect_to patients_path
+        if @patient.save
+            redirect_to patients_path
+        else 
+            render :new
+        end 
     end 
 
     def index 

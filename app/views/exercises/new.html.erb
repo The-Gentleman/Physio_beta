@@ -1,0 +1,15 @@
+<h3>Assign a rehabilitative exercise</h3>
+<!--how do I assign this exercise to this specific patient? -->
+<!--I need a way of encapsulating that patients id -->
+<!--I cam use current_users id -->
+<!--But how do I put that in a view? Hidden field? -->
+
+<%= form_for(@exercise) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br></br>
+    <%= f.label :reps %>
+    <%= f.number_field :name %>
+    <br></br>
+    <%= f.submit "Assign Exercise" %>
+<% end %>
