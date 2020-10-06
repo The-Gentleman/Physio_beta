@@ -1,17 +1,30 @@
 class ExercisesController < ApplicationController
+    # project success requires index[DONE] and new
 
-    def index 
-        # raise params.inspect
-        # if nested
-        if params[:patient_id]
-            # load only the exercises nested under this patient
-            @exercises = Exercise.find_by(patient_id: params[:patient_id]) 
-        else 
-            # load all the exercises
-            @exercises = current_user.exercises
-        end 
+    def show 
+        @exercise = Exercise.find(params[:id])
     end 
     
+    def index 
+        if params[:patient_id]
+            @exercises = Patient.find(params[:patient_id]).exercises
+        else 
+            @exercises = Exercise.all
+        end 
+    end 
+
+    def new 
+        raise params.inspect
+        # if params[:patient_id] && patient = Patient.find_by_id(params[:patient_id])
+        #     # binding.pry
+        #     @exercise = patient.exercises.build 
+        # else 
+        #     @exercise = Exercise.new
+        # end 
+    end 
+
+
+
     private
     def exercise_params
         params.require(:exercise).permit(:name, :reps, :user_id, :patient_id)

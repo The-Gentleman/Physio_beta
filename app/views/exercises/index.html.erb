@@ -1,8 +1,11 @@
+<% @exercises.all.map do |exercise| %>
+
 <h4>Exercise Name:</h4>
-<%= @exercises.name %>
+<%= exercise.name %>
 
 <br></br>
-<h4>Number of repitions</h4>
-<%= @exercises.reps %>
+<%= link_to "View This Exercise.", exercise_path(exercise) %>
+<% end %>
+
 
 

@@ -13,6 +13,7 @@
     <% if logged_in? %>
       <%= link_to "Your Page", user_path(current_user) %>
       <%= link_to "View Patients", patients_path %>
+      <%= link_to "View Exercises", exercises_path %>
       <%= link_to "Log Out", logout_path, method: :delete %>
     <% end %>
     <%= yield %>
