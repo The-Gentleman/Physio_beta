@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :patients, only: [:new, :index, :show] do 
-    resources :exercises
+  resources :patients do 
+    resources :exercises, only: [:new, :create, :index]
   end 
 
   root "sessions#index"

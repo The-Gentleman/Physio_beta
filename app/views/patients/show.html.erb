@@ -1,5 +1,7 @@
 <h3><%= @patient.name %></h3>
-<label>Patient has been diagnosed with <%= @patient.diagnosis %>.</label>
+<label>Patient has been diagnosed with <%= @patient.diagnosis %>. Select an exercise below or assign one of your own.</label>
 
+<br></br>
+<%= link_to "Select an exercise", patient_exercises_path(@patient) %>
 <br></br>
 <%= link_to "Assign an exercise", new_exercise_path %>

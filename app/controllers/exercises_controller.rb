@@ -1,15 +1,17 @@
 class ExercisesController < ApplicationController
 
-    def new
+    def index 
+        # raise params.inspect
+        # if nested
         if params[:patient_id]
-            @exercise = Exercise.new
+            # load only the exercises nested under this patient
+            @exercises = Exercise.find_by(patient_id: params[:patient_id]) 
         else 
-            redirect_to patients_path
+            # load all the exercises
+            @exercises = current_user.exercises
         end 
-        #  binding.pry
     end 
-    # check if patient id is in params 
-
+    
     private
     def exercise_params
         params.require(:exercise).permit(:name, :reps, :user_id, :patient_id)
