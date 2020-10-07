@@ -1,5 +1,5 @@
 class ExercisesController < ApplicationController
-    # project success requires index[DONE] and new
+    # project success requires index[DONE] and new[DONE]
 
     def show 
         @exercise = Exercise.find(params[:id])
@@ -7,7 +7,6 @@ class ExercisesController < ApplicationController
 
     def new 
         if params[:patient_id] && patient = Patient.find_by_id(params[:patient_id])
-            # binding.pry
             @exercise = patient.exercises.build 
         else 
             @exercise = Exercise.new
@@ -15,7 +14,11 @@ class ExercisesController < ApplicationController
     end 
 
     def create 
-        raise params.inspect
+        @exercise = Exercise.create(exercise_params)
+        if @exercise.save
+            redirect_to patient_exercises_path(@exercise.patient.id)
+        else 
+        end 
     end 
     
     

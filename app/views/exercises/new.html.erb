@@ -7,7 +7,6 @@
     <%= f.number_field :reps %>
      <br></br>
     <%= f.hidden_field :user_id, {:value => current_user.id} %>
-    <%= f.hidden_field :patient_id, {:value => @patient_id} %>
-
+    <%= f.hidden_field :patient_id, {:value => @exercise.patient.id} %>
     <%= f.submit "Create Exercise"%>
 <% end %>
