@@ -2,6 +2,6 @@
 <label>Patient has been diagnosed with <%= @patient.diagnosis %>. Select an exercise below or assign one of your own.</label>
 
 <br></br>
-<%= link_to "Select an exercise", patient_exercises_path(@patient) %>
+ <%= link_to "View patient exercises", patient_exercises_path(@patient) %>
 <br></br>
-<%= link_to "Assign an exercise", new_exercise_path %>
+<%= link_to "Assign an exercise", new_patient_exercise_path(@patient) %>

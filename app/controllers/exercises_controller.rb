@@ -4,6 +4,20 @@ class ExercisesController < ApplicationController
     def show 
         @exercise = Exercise.find(params[:id])
     end 
+
+    def new 
+        if params[:patient_id] && patient = Patient.find_by_id(params[:patient_id])
+            # binding.pry
+            @exercise = patient.exercises.build 
+        else 
+            @exercise = Exercise.new
+        end 
+    end 
+
+    def create 
+        raise params.inspect
+    end 
+    
     
     def index 
         if params[:patient_id]
@@ -13,15 +27,6 @@ class ExercisesController < ApplicationController
         end 
     end 
 
-    def new 
-        raise params.inspect
-        # if params[:patient_id] && patient = Patient.find_by_id(params[:patient_id])
-        #     # binding.pry
-        #     @exercise = patient.exercises.build 
-        # else 
-        #     @exercise = Exercise.new
-        # end 
-    end 
 
 
 

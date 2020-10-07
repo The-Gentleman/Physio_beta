@@ -1,11 +1,14 @@
+<ul>
 <% @exercises.all.map do |exercise| %>
-
+<li>
 <h4>Exercise Name:</h4>
 <%= exercise.name %>
 
 <br></br>
 <%= link_to "View This Exercise.", exercise_path(exercise) %>
+</li>
 <% end %>
+</ul>
 
 
 
