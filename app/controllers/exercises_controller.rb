@@ -5,6 +5,14 @@ class ExercisesController < ApplicationController
         @exercise = Exercise.find(params[:id])
     end 
 
+    def index 
+        if params[:patient_id] && patient = Patient.find_by_id(params[:patient_id])
+            @exercises = Patient.find(params[:patient_id]).exercises
+        else 
+            @exercises = Exercise.all
+        end 
+    end 
+
     def new 
         if params[:patient_id] && patient = Patient.find_by_id(params[:patient_id])
             @exercise = patient.exercises.build 
@@ -18,21 +26,23 @@ class ExercisesController < ApplicationController
         if @exercise.save
             redirect_to patient_exercises_path(@exercise.patient.id)
         else 
-        end 
-    end 
-    
-    
-    def index 
-        if params[:patient_id]
-            @exercises = Patient.find(params[:patient_id]).exercises
-        else 
-            @exercises = Exercise.all
+            render :new
         end 
     end 
 
+    def edit 
+        @exercise = Exercise.find(params[:id])
+    end 
 
-
-
+    def update 
+        @exercise = Exercise.find_by(id: params[:id])
+        if @exercise.update(exercise_params)
+            redirect_to patient_exercises_path(@exercise)
+        else
+            render :edit
+        end
+    end 
+    
     private
     def exercise_params
         params.require(:exercise).permit(:name, :reps, :user_id, :patient_id)

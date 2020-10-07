@@ -5,10 +5,13 @@
 <%= exercise.name %>
 
 <br></br>
-<%= link_to "View This Exercise.", exercise_path(exercise) %>
+<%= link_to "View This Exercise", exercise_path(exercise) %>
+<br></br>
+<%= link_to "Change exercise", edit_exercise_path(exercise) %>
 </li>
 <% end %>
 </ul>
+
 
 
 

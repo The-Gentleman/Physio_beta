@@ -8,7 +8,6 @@ class UsersController < ApplicationController
         if @user.save
             session[:user_id] = @user.id
             redirect_to user_path(@user)
-            # this isnt redirecting where I want it to. Why?
         else 
             render :new
         end 
