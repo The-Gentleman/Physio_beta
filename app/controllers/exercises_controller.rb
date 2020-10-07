@@ -42,6 +42,8 @@ class ExercisesController < ApplicationController
             render :edit
         end
     end 
+    # eventually add a destroy action
+
     
     private
     def exercise_params

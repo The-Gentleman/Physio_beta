@@ -1,3 +1,5 @@
+<%= render partial: "layouts/errors", locals: {object: @exercise} %>
+
 <%= form_for (@exercise) do |f| %>
     <br></br>
     <%= f.label :name %>:
