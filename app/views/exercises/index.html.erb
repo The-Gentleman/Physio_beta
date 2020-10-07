@@ -1,3 +1,4 @@
+<h1><%= @exercises.first.patient.name %></h1>
 <ul>
 <% @exercises.all.map do |exercise| %>
 <li>
@@ -6,8 +7,6 @@
 
 <br></br>
 <%= link_to "View This Exercise", exercise_path(exercise) %>
-<br></br>
-<%= link_to "Change exercise", edit_exercise_path(exercise) %>
 </li>
 <% end %>
 </ul>

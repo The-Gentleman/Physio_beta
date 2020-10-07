@@ -37,7 +37,7 @@ class ExercisesController < ApplicationController
     def update 
         @exercise = Exercise.find_by(id: params[:id])
         if @exercise.update(exercise_params)
-            redirect_to patient_exercises_path(@exercise)
+            redirect_to exercise_path(@exercise)
         else
             render :edit
         end
