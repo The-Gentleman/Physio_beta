@@ -6,7 +6,7 @@
     <%= f.text_field :name %>
     <br></br>
     <%= f.label :reps %>:
-    <%= f.number_field :reps %>
+    <%= f.number_field :reps, in: 1...51  %>
      <br></br>
     <%= f.hidden_field :user_id, {:value => current_user.id} %>
     <%= f.hidden_field :patient_id, {:value => @exercise.patient.id} %>

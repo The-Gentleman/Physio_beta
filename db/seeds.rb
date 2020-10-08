@@ -12,7 +12,7 @@ charles = Patient.create(name: "Charles Smith", diagnosis: "Too cool for school"
 
 exercise1 = Exercise.create(name: "Squats", reps: 10, user_id: phil.id, patient_id: dutch.id)
 exercise2 = Exercise.create(name: "Get ups", reps: 20, user_id: phil.id , patient_id: dutch.id)
-exercise3 = Exercise.create(name: "Lateral arm raises", reps: 10 , user_id: mike.id, patient_id: john.id)
+exercise3 = Exercise.create(name: "Lateral arm raises", reps: 10 , user_id: mike.id, patient_id: dutch.id)
 exercise4 = Exercise.create(name: "Arm circles", reps: 10, user_id: mike.id, patient_id: john.id)
 exercise5 = Exercise.create(name: "Banded shoulder pulls", reps: 25, user_id: house.id, patient_id: arthur.id)
 exercise6 = Exercise.create(name: "Banded push ups", reps: 30, user_id: house.id, patient_id: arthur.id)

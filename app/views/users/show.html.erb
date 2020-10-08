@@ -1,2 +1,8 @@
 <h1>Welcome to your profile page,  <%= @user.username %>!</h1>
 <%= link_to "Add a new patient here", new_patient_path %>
+<br></br>
+<p>Patient with most exercises:</p>
+<% @user.patients.patient_with_most_exercises.each do |e| %>
+    <%= e.name %>
+    <br>
+<% end %>

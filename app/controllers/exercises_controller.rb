@@ -1,11 +1,15 @@
 class ExercisesController < ApplicationController
-    # project success requires index[DONE] and new[DONE]
 
     def show 
         @exercise = Exercise.find(params[:id])
     end 
 
     def index 
+        # binding.pry
+        # if current_user.exercises.empty?
+        #     flash[:message] = "You havent added any exercises"
+        #     redirect_to patient_exercises_path
+        # end 
         if params[:patient_id] && patient = Patient.find_by_id(params[:patient_id])
             @exercises = Patient.find(params[:patient_id]).exercises
         else 
