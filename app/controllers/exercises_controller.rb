@@ -5,10 +5,6 @@ class ExercisesController < ApplicationController
     end 
 
     def index 
-        # if current_user.exercises.empty?
-        #     flash[:message] = "You havent added any exercises"
-        #     redirect_to patient_exercises_path
-        # end 
         if params[:patient_id] && patient = Patient.find_by_id(params[:patient_id])
             @exercises = Patient.find(params[:patient_id]).exercises
         else 

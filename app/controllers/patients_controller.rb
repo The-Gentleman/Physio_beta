@@ -6,6 +6,7 @@ class PatientsController < ApplicationController
     def index 
         if !current_user.patients.empty?
             @patients = current_user.patients.uniq
+            @frequent_patients = current_user.exercises.most_frequent_patient
         else 
             flash[:message] = "You dont have any patients yet! Add one below."
             redirect_to new_patient_path

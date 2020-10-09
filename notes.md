@@ -43,7 +43,7 @@ Relationships
     You must include a nested new route with form that relates to the parent resource
     You must include a nested index or show route
 
-[] Your forms should correctly display validation errors.
+[x] Your forms should correctly display validation errors.
     a. Your fields should be enclosed within a fields_with_errors class
     b. Error messages describing the validation failures must be present within the view.
 
@@ -55,10 +55,3 @@ Relationships
 
 
 
-    -------------
-    1. Create route for users/:id/patients
-    2. Change link in navbar to point to that route
-    3. Update controller index action. 
-    4. Check of user is present in params
-    5. Use that id to find that user 
-    6. then user.patients

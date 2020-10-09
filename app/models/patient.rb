@@ -4,5 +4,5 @@ class Patient < ApplicationRecord
     validates :name, uniqueness: true
     validates :diagnosis, presence: true
 
-
+    
 end

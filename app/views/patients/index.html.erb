@@ -1,3 +1,10 @@
+<br>
+<h3>Top 3 patients with the most exercises:</h3>
+<% @frequent_patients.each do |patient| %>
+   <ul>
+   <%= Patient.find(patient.patient_id).name %>
+   </ul>
+<% end %>
 <h2> These are your patients: </h2>
 
 <% @patients.map do |patient|  %>
