@@ -41,6 +41,10 @@ class ExercisesController < ApplicationController
             render :edit
         end
     end 
+
+    def all_exercises
+        @exercises = Exercise.all
+    end 
     # eventually add a destroy action
 
     

@@ -3,9 +3,5 @@
 <h4>Recommended number of repetitions:</h4>
 <%= @exercise.reps %>
 <br></br>
-<%= link_to "Change exercise", edit_exercise_path(@exercise) %>
-<br>
 <%= link_to "Back to patient", patient_path(@exercise.patient) %>
-<br>
-<%= link_to "Remove exercise", exercise_path(@exercise) %>
 

@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   
   resources :patients 
   resources :exercises
+  get 'all_exercises' => "exercises#all_exercises"
   resources :users
   end
