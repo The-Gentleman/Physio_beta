@@ -4,9 +4,7 @@ class Exercise < ApplicationRecord
     validates :name, presence: true 
     validates :reps, presence: true, numericality: true
 
-    # Exercise.exercises_with_most_reps
-    # current_user.exercises.exercises_with_most_reps
-    # I want to take exercises.reps in ascending order, and take the first exercise
-
+    # scope method:
+    # I want to query Exercise to choose which exercise has most reps
 
 end

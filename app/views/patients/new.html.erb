@@ -1,5 +1,9 @@
 <%= render partial: "layouts/errors", locals: {object: @patient} %>
 
+<% if flash[:message] %>
+   <br><h2><%= flash[:message] %></h2>
+<% end %>
+
 <%= form_for(@patient) do |f| %>
     <br>
     <%= f.label :name %>:

@@ -51,3 +51,14 @@ Relationships
     Logic present in your controllers should be encapsulated as methods in your models.
     Your views should use helper methods and partials when appropriate.
     Follow patterns in the Rails Style Guide and the Ruby Style Guide.
+
+
+
+
+    -------------
+    1. Create route for users/:id/patients
+    2. Change link in navbar to point to that route
+    3. Update controller index action. 
+    4. Check of user is present in params
+    5. Use that id to find that user 
+    6. then user.patients

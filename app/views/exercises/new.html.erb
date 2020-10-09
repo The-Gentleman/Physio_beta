@@ -1,5 +1,6 @@
 <%= render partial: "layouts/errors", locals: {object: @exercise} %>
-
+<h2>Assign an exercise</h3>
+<h3>Patient: <%= @exercise.patient.name %></h3>
 <%= form_for (@exercise) do |f| %>
     <br></br>
     <%= f.label :name %>:

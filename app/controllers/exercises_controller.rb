@@ -5,7 +5,6 @@ class ExercisesController < ApplicationController
     end 
 
     def index 
-        # binding.pry
         # if current_user.exercises.empty?
         #     flash[:message] = "You havent added any exercises"
         #     redirect_to patient_exercises_path

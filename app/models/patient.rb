@@ -4,6 +4,5 @@ class Patient < ApplicationRecord
     validates :name, uniqueness: true
     validates :diagnosis, presence: true
 
-    scope :patient_with_most_exercises, -> {order(reps: :asc).limit(3)}
 
 end
