@@ -45,8 +45,8 @@ class ExercisesController < ApplicationController
     def all_exercises
         @exercises = Exercise.all
     end 
-    # eventually add a destroy action
 
+    
     
     private
     def exercise_params

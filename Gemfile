@@ -23,6 +23,9 @@ gem 'jbuilder', '~> 2.7'
 gem 'bcrypt', '~> 3.1.7'
 gem 'faker', '~> 2.14'
 gem 'pry', '~> 0.13.1'
+gem 'omniauth'
+gem 'dotenv-rails'
+gem 'omniauth-google-oauth2'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
