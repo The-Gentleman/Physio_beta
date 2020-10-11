@@ -1,6 +1,6 @@
 <br>
-<!-- CONSIDER PUTTING THIS ITERATION IN A HELPER USING AN IF/ELSE TO CHECK IF YOU HAVE MORE THAN 3 PATIENTS  -->
-   <h3>Top 3 patients with the most exercises:</h3>
+
+   <h3>Patient with the most exercises:</h3>
    <% @frequent_patients.each do |patient| %>
       <ul>
       <%= Patient.find(patient.patient_id).name %>
