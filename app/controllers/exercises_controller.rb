@@ -5,7 +5,7 @@ class ExercisesController < ApplicationController
     end 
 
     def index 
-        if params[:patient_id] && patient = Patient.find_by_id(params[:patient_id])
+        if params[:patient_id] && @patient = Patient.find_by_id(params[:patient_id])
             @exercises = Patient.find(params[:patient_id]).exercises
         else 
             @exercises = Exercise.all
@@ -21,8 +21,8 @@ class ExercisesController < ApplicationController
     end 
 
     def create 
-        @exercise = Exercise.create(exercise_params)
-        if @exercise.save
+        @exercise = Exercise.find_or_create_by(exercise_params)
+        if @exercise.save 
             redirect_to patient_exercises_path(@exercise.patient.id)
         else 
             render :new
@@ -46,6 +46,11 @@ class ExercisesController < ApplicationController
         @exercises = Exercise.all
     end 
 
+    def destroy
+        patient_id = Exercise.find(params[:id]).patient.id
+        Exercise.find(params[:id]).delete
+        redirect_to patient_exercises_path(patient_id)
+    end 
     
     
     private
