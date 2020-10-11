@@ -18,17 +18,8 @@ class SessionsController < ApplicationController
     end 
 
     def google
-        @user = User.find_or_create_by(username: auth['info']['name']) do |user|
-            user.username = auth['info']['name']
-            user.password = SecureRandom.hex(15)
-        end 
-        if @user.valid?
-            session[:user_id]
-            redirect_to user_path(@user)
-        else 
-            flash[:message] = "Wrong login. Try again."
-            redirect_to root_path
-        end 
+        @user = User.from_google(auth)
+        # binding.pry
     end 
 
     def destroy
