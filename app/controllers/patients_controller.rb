@@ -26,6 +26,12 @@ class PatientsController < ApplicationController
 
     def show 
         @patient = Patient.find(params[:id])
+        if current_user.patients.include?(@patient)
+            render :show 
+        else 
+            flash[:message] = "You arent authorized to access this page."
+            redirect_to user_path(current_user) 
+        end 
     end 
     
     
