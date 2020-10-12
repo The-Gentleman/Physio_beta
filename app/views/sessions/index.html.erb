@@ -4,8 +4,6 @@
 <%= link_to "Log In", login_path %><br></br>
 <%= link_to "Sign in with google", '/auth/google_oauth2'%><br></br>
 
-<% if flash[:message] %>
-    <%= flash[:message] %>
-<% end %>
+<%= flash_message %>
 
 
