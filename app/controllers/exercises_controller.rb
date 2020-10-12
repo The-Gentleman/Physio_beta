@@ -1,7 +1,7 @@
 class ExercisesController < ApplicationController
+    before_action :find_exercises, only: [:show, :edit]
 
     def show 
-        @exercise = Exercise.find(params[:id])
     end 
 
     def index 
@@ -30,7 +30,6 @@ class ExercisesController < ApplicationController
     end 
 
     def edit 
-        @exercise = Exercise.find(params[:id])
     end 
 
     def update 
@@ -56,5 +55,10 @@ class ExercisesController < ApplicationController
     private
     def exercise_params
         params.require(:exercise).permit(:name, :reps, :user_id, :patient_id)
+    end 
+
+    def find_exercises
+        @exercise = Exercise.find_by(id: params[:id])
+        redirect_to exercises_path if !@exercise
     end 
 end

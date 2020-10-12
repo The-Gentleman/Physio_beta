@@ -11,6 +11,11 @@ class User < ApplicationRecord
             user.password = SecureRandom.hex(15)
         end 
     end
-    
 
+class UserNotFound < StandardError
+    def error 
+        "User cannot be found"
+    end 
+end 
+    
 end

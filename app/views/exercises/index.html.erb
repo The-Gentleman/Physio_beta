@@ -1,4 +1,6 @@
-<h3>Patient Name: <%= @patient.name %></h3>
+<% if @patient %>
+    <h3>Patient Name: <%= @patient.name %></h3>
+<% end %>
 <ul>
 <% @exercises.all.map do |exercise| %>
 <li>

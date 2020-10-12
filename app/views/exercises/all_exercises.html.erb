@@ -4,6 +4,8 @@
         <ul>
             <li><%= exercise.name %><br></li>
             <label>Recommended repetitions: <%= exercise.reps %>
+            <br>
+            <%= link_to "View exercise", exercise_path(exercise) %>
         <ul>
     </div>
 <% end %>
