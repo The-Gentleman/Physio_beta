@@ -12,10 +12,5 @@ class User < ApplicationRecord
         end 
     end
 
-class UserNotFound < StandardError
-    def error 
-        "User cannot be found"
-    end 
-end 
     
 end

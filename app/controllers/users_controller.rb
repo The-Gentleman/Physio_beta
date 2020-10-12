@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+    before_action :find_user, only: [:show]
     def new 
         @user = User.new
     end 
@@ -15,19 +15,17 @@ class UsersController < ApplicationController
     end 
 
     def show 
-        @user = User.find(params[:id])
+        flash[:message] = "You are not authorized to access that page."
     end 
-
-
 
     private 
     def user_params
         params.require(:user).permit(:username, :password)
     end 
-    # FIND A WAY TO MAKE THIS WORK
-    # def find_user
-    #     @user = User.find_by(id: params[:id])
-    #     raise UserNotFound if !@user 
-    # end 
+    
+    def find_user
+        @user = User.find_by(id: params[:id]) unless current_user.id != params[:id].to_i
+    end 
+
 
 end

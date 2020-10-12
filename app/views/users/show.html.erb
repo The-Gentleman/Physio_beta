@@ -1,4 +1,7 @@
 <% if @user %>
     <h1>Welcome to your profile page,  <%= @user.username %>!</h1>
-<% end %>
-<%= link_to "Add a new patient here", new_patient_path %>
+    <%= link_to "Add a new patient here", new_patient_path %>
+<% else %>
+    <h3><%= flash[:message] %></h3> 
+// <% end %>
+
