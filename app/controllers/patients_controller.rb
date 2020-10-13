@@ -1,5 +1,5 @@
 class PatientsController < ApplicationController
-    
+
     def new 
         @patient = Patient.new
     end 
@@ -26,12 +26,6 @@ class PatientsController < ApplicationController
 
     def show 
         @patient = Patient.find(params[:id])
-        if current_user.patients.include?(@patient)
-            render :show 
-        else 
-            flash[:message] = "You arent authorized to access this page."
-            redirect_to user_path(current_user) 
-        end 
     end 
     
     
@@ -41,4 +35,5 @@ class PatientsController < ApplicationController
     def patient_params
         params.require(:patient).permit(:name, :diagnosis)
     end 
+
 end

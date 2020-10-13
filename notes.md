@@ -37,7 +37,7 @@ Relationships
 
 [x] Your application must provide standard user authentication, including signup, login, logout, and passwords.
 
-[] Your authentication system must also allow login from some other service. Facebook, Twitter, Foursquare, Github, etc...
+[x] Your authentication system must also allow login from some other service. Facebook, Twitter, Foursquare, Github, etc...
 
 [x] You must include and make use of a nested resource with the appropriate RESTful URLs.
     You must include a nested new route with form that relates to the parent resource
