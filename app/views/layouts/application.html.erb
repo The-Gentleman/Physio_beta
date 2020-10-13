@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Physio</title>
     <%= csrf_meta_tags %>
@@ -7,15 +7,26 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1"
   </head>
 
   <body>
-    <% if logged_in? %>
-      <%= link_to "Your Page", user_path(current_user) %>
-      <%= link_to "View Patients", patients_path %>
-      <%= link_to "View Exercises", all_exercises_path %>
-      <%= link_to "Log Out", logout_path, method: :delete %>
-    <% end %>
+    <header class="container">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          
+
+          <ul class="nav navbar-nav navbar-left">
+            <% if logged_in? %>
+              <li><%= link_to "Your Page", user_path(current_user) %></li>
+              <li><%= link_to "View Patients", patients_path %></li>
+              <li><%= link_to "View Exercises", all_exercises_path %></li>
+              <li><%= link_to "Log Out", logout_path, method: :delete %></li>
+            <% end %>
+          </ul>
+        </div>
+      </nav>
+      </header>
     <%= yield %>
   </body>
 </html>
