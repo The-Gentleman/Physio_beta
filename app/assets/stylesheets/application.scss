@@ -1,7 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
 .session-index-container {
         padding-left: 150px;
 }
@@ -38,4 +37,16 @@
 }
 .all-exercises-container {
         padding-left: 150px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+}
+
+.exercise {
+    width: 30%;
+    min-width: 300px;
+    border-color: hsla(245, 63%, 87%, 0.815);
+    border-style: ridge;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
