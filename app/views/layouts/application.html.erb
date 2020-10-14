@@ -12,21 +12,25 @@
 
   <body>
     <header class="container">
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
 
-          <ul class="nav navbar-nav navbar-left">
-            <% if logged_in? %>
-              <li><%= link_to "Your Page", user_path(current_user) %></li>
-              <li><%= link_to "View Patients", patients_path %></li>
-              <li><%= link_to "View Exercises", all_exercises_path %></li>
-              <li><%= link_to "Log Out", logout_path, method: :delete %></li>
-            <% end %>
-          </ul>
+            <ul class="nav navbar-nav navbar-left">
+              <% if logged_in? %>
+                <li><%= link_to "Your Page", user_path(current_user) %></li>
+                <li><%= link_to "View Patients", patients_path %></li>
+                <li><%= link_to "View Exercises", all_exercises_path %></li>
+                <li><%= link_to "Log Out", logout_path, method: :delete %></li>
+              <% else %>
+                <li><%= link_to "Log In", login_path %><br></br></li>
+                <li><%= link_to "Sign up", signup_path %><br></br></li>
+              <% end %>
+            </ul>
         </div>
-      </nav>
+        </nav>
       </header>
-    <%= yield %>
+
+
+        <%= yield %>
   </body>
 </html>

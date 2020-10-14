@@ -1,14 +1,18 @@
-   <h3>Patient with the most exercises:</h3>
-   <% @frequent_patients.each do |patient| %>
+<div class="patient-index-container">
+      <h2>Patient with the most exercises:</h2>
+      <% @frequent_patients.each do |patient| %>
+         <ol>
+         <%= Patient.find(patient.patient_id).name %>
+         </ol>
+      <% end %>
+
+   <h3> These are your patients: </h3>
+
+   <% @patients.map do |patient|  %>
+      <h4>Patient Name:</h4>
       <ul>
-      <%= Patient.find(patient.patient_id).name %>
-      </ul>
+      <li><%= link_to patient.name, patient_path(patient) %></br></li>
+      <ul>
    <% end %>
-
-<h2> These are your patients: </h2>
-
-<% @patients.map do |patient|  %>
-   <h3>Patient Name:</h3>
-   <%= link_to patient.name, patient_path(patient) %></br>
-<% end %>
+</div>
 

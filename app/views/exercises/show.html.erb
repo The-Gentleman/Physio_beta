@@ -1,9 +1,10 @@
-<h3>Exercise Name:</h3>
-<%= @exercise.name %>
-<h4>Recommended number of repetitions:</h4>
-<%= @exercise.reps %>
-<br></br>
-<%= link_to "Back", all_exercises_path(@exercise) %>
-
+<div class="exercises-show-container">
+    <h3>Exercise Name:</h3>
+    <%= @exercise.name %>
+    <h4>Recommended number of repetitions:</h4>
+    <%= @exercise.reps %>
+    <br></br>
+    <%= link_to "Back", all_exercises_path(@exercise) %>
+<div>
 
 

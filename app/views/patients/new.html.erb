@@ -1,16 +1,15 @@
-<%= render partial: "layouts/errors", locals: {object: @patient} %>
+<div class="patient-new-container">
+    <%= render partial: "layouts/errors", locals: {object: @patient} %>
 
-<% if flash[:message] %>
-   <br><h2><%= flash[:message] %></h2>
-<% end %>
-
-<%= form_for(@patient) do |f| %>
-    <br>
-    <%= f.label :name %>:
-    <%= f.text_field :name %>
-    <br></br>
-    <%= f.label :diagnosis %>:
-    <%= f.text_field :diagnosis %><br>
-    <br></br>
-    <%= f.submit "Add Patient" %>
-<% end %>
+    
+    <%= form_for(@patient) do |f| %>
+        <br>
+        <%= f.label :name %>:
+        <%= f.text_field :name %>
+        <br></br>
+        <%= f.label :diagnosis %>:
+        <%= f.text_field :diagnosis %><br>
+        <br></br>
+        <%= f.submit "Add Patient" %>
+    <% end %>
+</div>

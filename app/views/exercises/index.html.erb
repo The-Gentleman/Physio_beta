@@ -1,21 +1,24 @@
-<% if @patient  %>
-    <h3>Patient Name: <%= @patient.name %></h3>
-<% end %>
+<div class="exercises-index-container">
 
-<ul>
-<% @exercises.all.map do |exercise| %>
-<li>
-<h4>Exercise Name:</h4>
-<%= exercise.name %>
+    <% if @patient  %>
+        <h3>Patient Name: <%= @patient.name %></h3>
+    <% end %>
 
-<br></br>
-<%= link_to "Change this exercise", edit_exercise_path(exercise) %>
-<br></br>
-<%= link_to "Remove this exercise", exercise_path(exercise), method: :delete %>
+    <ul>
+    <% @exercises.all.map do |exercise| %>
+    <li>
+    <h4>Exercise Name:</h4>
+    <%= exercise.name %>
 
-</li>
-<% end %>
-</ul>
+    <br></br>
+    <%= link_to "Change this exercise", edit_exercise_path(exercise) %>
+    <br></br>
+    <%= link_to "Remove this exercise", exercise_path(exercise), method: :delete %>
+
+    </li>
+    <% end %>
+    </ul>
+</div>
 
 
 

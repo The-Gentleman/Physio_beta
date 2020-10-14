@@ -1,11 +1,11 @@
-<br></br>
-<% @exercises.each do |exercise| %>
-    <div>
-        <ul>
-            <li><%= exercise.name %><br></li>
-            <label>Recommended repetitions: <%= exercise.reps %>
-            <br>
-            <%= link_to "View exercise", exercise_path(exercise) %>
-        <ul>
-    </div>
-<% end %>
+<div class="all-exercises-container">
+    <% @exercises.each do |exercise| %>
+        <div>
+            <ul>
+                <label><li><%= exercise.name %><br></li></label><br>
+                <p>Recommended repetitions: <%= exercise.reps %></p>
+                <%= link_to "View exercise", exercise_path(exercise) %>
+            <ul>
+        </div>
+    <% end %>
+</div>

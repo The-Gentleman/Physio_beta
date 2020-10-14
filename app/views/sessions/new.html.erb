@@ -1,13 +1,15 @@
-<h1>Log in</h1>
+<div class="session-new-container">
+    <h1>Log in</h1>
 
-<%= flash_message %>
+    <%= flash_message %>
 
-<%= form_for :user do |f| %>
-    <%= f.label :username %>
-    <%= f.text_field :username, required: true %>
-    
-    <%= f.label :password %>
-    <%= f.password_field :password, required: true  %>
-    
-    <%= f.submit "Log in" %><br>
-<% end %>
+    <%= form_for :user do |f| %>
+        <%= f.label :username %>
+        <%= f.text_field :username, required: true %>
+
+        <%= f.label :password %>
+        <%= f.password_field :password, required: true  %>
+
+        <%= f.submit "Log in" %><br>
+    <% end %>
+</div>

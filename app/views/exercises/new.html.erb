@@ -1,4 +1,7 @@
-<%= render partial: "layouts/errors", locals: {object: @exercise} %>
+<div class="exercises-new-container">
 
-<h2>Assign an exercise for <%= @exercise.patient.name %></h3>
-<%= render "form" %>
+    <%= render partial: "layouts/errors", locals: {object: @exercise} %>
+    
+    <h2>Assign an exercise for <%= @exercise.patient.name %></h3>
+    <%= render "form" %>
+</div>
