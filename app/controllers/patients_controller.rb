@@ -1,5 +1,5 @@
 class PatientsController < ApplicationController
-    before_action :find_patient, only: [:show]
+
     def new 
         @patient = Patient.new
     end 
@@ -23,8 +23,14 @@ class PatientsController < ApplicationController
         end 
     end 
 
-
     def show 
+        current_user_ids = current_user.patients.map{|patient| patient.id.to_s}
+        if current_user_ids.include?(params[:id])
+            @patient = Patient.find_by(id: params[:id]) 
+        else 
+            flash[:message] = "You are not authorized to access that page."
+            redirect_to patients_path
+        end 
     end 
 
     
@@ -33,14 +39,4 @@ class PatientsController < ApplicationController
     def patient_params
         params.require(:patient).permit(:name, :diagnosis)
     end 
-
-    def find_patient
-        current_user_ids = current_user.patients.map{|patient| patient.id.to_s}
-        if current_user_ids.include?(params[:id])
-            @patient = Patient.find_by(id: params[:id]) 
-        else 
-            redirect_to patients_path
-        end 
-    end 
-
 end

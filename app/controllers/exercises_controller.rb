@@ -68,6 +68,7 @@ class ExercisesController < ApplicationController
         if current_user_ids.include?(params[:patient_id])
             @exercises = Patient.find(params[:patient_id]).exercises
         else 
+            flash[:message] = "You are not authorized to access that page."
             redirect_to patients_path
         end 
     end 

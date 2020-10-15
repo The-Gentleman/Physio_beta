@@ -8,12 +8,15 @@
 
    <h3> These are your patients: </h3>
       <% @patients.map do |patient|  %>
-   <div class="patients">
-         <h4>Patient Name:</h4>
-         <ul>
-         <li><%= link_to patient.name, patient_path(patient) %></br></li>
-         <ul>
-   </div>
+         <div class="patients">
+            <h4>Patient Name:</h4>
+            <ul>
+            <li><%= link_to patient.name, patient_path(patient) %></br></li>
+            <ul>
+         </div>
+      <% end %>
+      <% if flash[:message] %>
+         <h4><%= flash[:message] %></h4>
       <% end %>
 </div>
 
