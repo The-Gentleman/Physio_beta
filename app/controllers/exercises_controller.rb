@@ -1,14 +1,15 @@
 class ExercisesController < ApplicationController
     before_action :find_exercises, only: [:show, :edit]
+    before_action :redirect_if_not_current_user_patient, only: [:index, :new]
 
     def show 
     end 
 
     def index 
-        if params[:patient_id] && @patient = Patient.find_by_id(params[:patient_id])
+        if params[:patient_id] && @patient = Patient.find_by_id(params[:patient_id]) 
             @exercises = Patient.find(params[:patient_id]).exercises
         else 
-            @exercises = Exercise.all
+            redirect_to patients_path
         end 
     end 
 
@@ -61,4 +62,14 @@ class ExercisesController < ApplicationController
         @exercise = Exercise.find_by(id: params[:id])
         redirect_to exercises_path if !@exercise
     end 
+
+    def redirect_if_not_current_user_patient
+        current_user_ids = current_user.patients.map{|patient| patient.id.to_s}
+        if current_user_ids.include?(params[:patient_id])
+            @exercises = Patient.find(params[:patient_id]).exercises
+        else 
+            redirect_to patients_path
+        end 
+    end 
+
 end
