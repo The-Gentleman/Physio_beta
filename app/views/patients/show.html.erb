@@ -1,5 +1,4 @@
 <div class="patient-show-container">
-    <% if @patient %>
         <h3>Patient Name: <%= @patient.name %></h3>
         <label>Patient has been diagnosed with <%= @patient.diagnosis %>. Select an exercise below or assign one of your own.</label>
     
@@ -7,5 +6,4 @@
          <%= link_to "View patient exercises", patient_exercises_path(@patient) %>
         <br></br>
         <%= link_to "Assign an exercise", new_patient_exercise_path(@patient) %>
-    <% end %>
 </div>

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
     before_action :find_user, only: [:show]
-    
+    skip_before_action :redirect_if_not_logged_in, except: [:show]
+
     def new 
         @user = User.new
     end 
